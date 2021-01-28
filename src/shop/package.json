@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "name": "@one-item-shop/shop-homepage",
+  "description": "where the user finds out about the product and places an order",
+  "version": "1.0.0",
+  "main": "index.html",
+  "scripts": {
+    "test": "npx cypress run"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^6.3.0"
+  }
+}

@@ -1,5 +1,7 @@
 name: Shop Homepage CD
 on: [push]
+env: 
+  CYPRESS_CACHE_FOLDER: cypress/cache
 defaults:
   run:
     working-directory: src/shop
@@ -23,7 +25,7 @@ jobs:
       id: cache-cypress-binary
       uses: actions/cache@v2
       with:
-        path: .cache
+        path: src/shop/cypress/cache
         key: cypress-binary-${{ hashFiles('src/shop/package-lock.json') }}
     - name: Install Dependencies
       if: steps.cache.outputs.cache-hit != 'true'

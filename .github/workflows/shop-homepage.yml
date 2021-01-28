@@ -28,7 +28,7 @@ jobs:
         path: src/shop/cypress/cache
         key: cypress-binary-1-${{ hashFiles('src/shop/package-lock.json') }}
     - name: Install Dependencies
-      if: steps.cache.outputs.cache-hit != 'true'
+      if: steps.cache-node-modules.outputs.cache-hit != 'true'
       run: npm install
     - name: Run Tests
       run: npm test

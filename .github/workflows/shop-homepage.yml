@@ -1,4 +1,4 @@
-name: Shop Homepage Continuous Delivery Pipeline
+name: Shop Homepage CD
 on: [push]
 jobs:
   build:
@@ -18,5 +18,7 @@ jobs:
     - name: Install Dependencies
       if: steps.cache.outputs.cache-hit != 'true'
       run: npm install
+      working-directory: src/shop
     - name: Run Tests
       run: npm test
+      working-directory: src/shop

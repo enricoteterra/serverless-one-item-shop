@@ -1,4 +1,4 @@
-# Use Cypress for E2E tests
+# Use Cypress for regression tests
 
 ## Context 
 The shop will have a static homepage. 

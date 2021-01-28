@@ -6,7 +6,7 @@ defaults:
   run:
     working-directory: src/shop
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Code

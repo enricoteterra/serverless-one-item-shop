@@ -1,3 +1,4 @@
 node_modules
-cypress
-!cypress/support/index.js
+cypress/plugins
+cypress/screenshots
+cypress/videos

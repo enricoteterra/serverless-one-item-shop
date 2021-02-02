@@ -4,7 +4,7 @@ env:
   CYPRESS_CACHE_FOLDER: cypress/cache
 defaults:
   run:
-    working-directory: src/shop
+    working-directory: shop
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -19,14 +19,14 @@ jobs:
       id: cache-node-modules
       uses: actions/cache@v2
       with:
-        path: src/shop/node_modules
-        key: node-modules-1-${{ hashFiles('src/shop/package-lock.json') }}
+        path: shop/node_modules
+        key: node-modules-1-${{ hashFiles('shop/package-lock.json') }}
     - name: Cache Cypress Binary
       id: cache-cypress-binary
       uses: actions/cache@v2
       with:
-        path: src/shop/cypress/cache
-        key: cypress-binary-1-${{ hashFiles('src/shop/package-lock.json') }}
+        path: shop/cypress/cache
+        key: cypress-binary-1-${{ hashFiles('shop/package-lock.json') }}
     - name: Install Dependencies
       if: steps.cache-node-modules.outputs.cache-hit != 'true'
       run: npm install

@@ -6,7 +6,7 @@ describe("order product feature", () => {
         })
         it("notifies user when something goes wrong", () => {
             cy.visit('public/index.html')
-            cy.element('order-now').click()
+            cy.get('order-button').click()
             cy.get('order-notification').should('be.visible')
         })
     })

@@ -7,5 +7,11 @@ class OrderNotification extends HTMLElement {
           </div>`: null
     }
 }
-
 customElements.define('order-notification', OrderNotification);
+
+class OrderButton extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = `<button>order now</button>`;
+    }
+}
+customElements.define('order-button', OrderButton);

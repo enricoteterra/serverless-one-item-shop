@@ -1,17 +1,35 @@
 class OrderNotification extends HTMLElement {
-    static get observedAttributes() { return ["isVisible"] }
+    static observedAttributes = ['visible']
+    get visible() { 
+        return this.hasAttribute('visible') 
+    }
+    set visible(value) {
+        value ? this.setAttribute('visible', value)
+              : this.removeAttribute('visible')
+    }
+    render() {
+        this.innerHTML = this.visible ?
+         `<div>sorry, your order cannot be processed at this time</div>`: null
+    }
     connectedCallback() {
-        this.innerHTML = this.hasAttribute('isVisible') ?
-         `<div data-cy="order-failed-notification">
-           sorry, your order cannot be processed at this time
-          </div>`: null
+        this.render()
+    }
+    attributeChangedCallback() {
+        this.render()
     }
 }
 customElements.define('order-notification', OrderNotification);
 
 class OrderButton extends HTMLElement {
+    handleClick = (e) => {
+        e.preventDefault()
+        this.dispatchEvent(new CustomEvent('order-placed', {bubbles: true}))
+    }
     connectedCallback() {
-        this.innerHTML = `<button>order now</button>`;
+        const button = document.createElement('button');
+        button.onclick = this.handleClick
+        button.innerHTML = "order now"
+        this.appendChild(button);
     }
 }
 customElements.define('order-button', OrderButton);

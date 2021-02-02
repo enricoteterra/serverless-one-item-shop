@@ -1,6 +1,6 @@
 describe("order product feature", () => {
     describe("order failed scenario", () => {
-        it.skip("does not show any notification initially", () => {
+        it("does not show any notification initially", () => {
             cy.visit('public/index.html')
             cy.get('order-notification').should('not.be.visible')
         })

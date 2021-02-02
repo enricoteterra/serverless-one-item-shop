@@ -1,13 +1,13 @@
 describe("order product feature", () => {
     describe("order failed scenario", () => {
-        it.skip("should not show any notification initially", () => {
+        it.skip("does not show any notification initially", () => {
             cy.visit('public/index.html')
-            cy.element('order-notification').should('not.exist')
+            cy.get('order-notification').should('not.be.visible')
         })
-        it("should notify user that order could not be processed at this time", () => {
+        it("notifies user when something goes wrong", () => {
             cy.visit('public/index.html')
             cy.element('order-now').click()
-            cy.element('order-notification').contains('order could not be placed')
+            cy.get('order-notification').should('be.visible')
         })
     })
 })

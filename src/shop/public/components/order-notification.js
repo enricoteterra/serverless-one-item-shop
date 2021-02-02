@@ -9,7 +9,9 @@ class OrderNotification extends HTMLElement {
     }
     render() {
         this.innerHTML = this.visible ?
-         `<div>sorry, your order cannot be processed at this time</div>`: null
+         `<div style="color: red; margin-top: 20px;">
+            sorry, your order cannot be processed at this time
+          </div>`: null
     }
     connectedCallback() {
         this.render()

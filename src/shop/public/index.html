@@ -18,7 +18,7 @@
     <body>
         <section data-cy="product-info" class="product-info">
             <h2 data-cy="title">your meme as a jumper</h2>
-            <img data-cy="image" src="./jumper.jpg" alt="leonardo di caprio meme jumper"/>
+            <img data-cy="image" src="./jumper.jpg" alt="meme jumper"/>
             <p data-cy="description">fluffy!</p>
         </section>
         <form class="order-form">
@@ -26,8 +26,8 @@
             <order-notification></order-notification>
         </form>
         <script>
-            const orderNotification = document.querySelector('order-notification')
-            document.addEventListener("order-placed", () => orderNotification.visible = true);
+            document.addEventListener("order-placed", 
+                () => document.querySelector('order-notification').visible = true);
         </script>
     </body>
 </html>

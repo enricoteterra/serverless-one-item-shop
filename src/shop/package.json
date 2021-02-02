@@ -5,10 +5,12 @@
   "version": "1.0.0",
   "main": "index.html",
   "scripts": {
+    "dev": "lite-server --baseDir=public",
     "test": "npx cypress run"
   },
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^6.3.0"
+    "cypress": "^6.3.0",
+    "lite-server": "^2.6.1"
   }
 }

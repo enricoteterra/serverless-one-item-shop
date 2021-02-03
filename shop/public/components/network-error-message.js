@@ -1,4 +1,4 @@
-class NetworkError extends HTMLElement {
+class NetworkErrorMessage extends HTMLElement {
     static observedAttributes = ['visible']
     get visible() { 
         return this.hasAttribute('visible') 
@@ -20,4 +20,4 @@ class NetworkError extends HTMLElement {
         this.render()
     }
 }
-customElements.define('network-error', NetworkError)
+customElements.define('network-error-message', NetworkErrorMessage)

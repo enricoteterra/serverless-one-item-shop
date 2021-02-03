@@ -1,7 +1,7 @@
 "use strict";
 
 import './components/order-button.js'
-import './components/order-notification.js'
+import './components/network-error.js'
 
 document.addEventListener("order-placed", 
-    () => document.querySelector('order-notification').visible = true);
+    () => document.querySelector('network-error').visible = true)

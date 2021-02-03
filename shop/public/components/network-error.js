@@ -1,4 +1,4 @@
-class OrderNotification extends HTMLElement {
+class NetworkError extends HTMLElement {
     static observedAttributes = ['visible']
     get visible() { 
         return this.hasAttribute('visible') 
@@ -10,7 +10,7 @@ class OrderNotification extends HTMLElement {
     render() {
         this.innerHTML = this.visible ?
          `<div style="color: red; margin-top: 20px;">
-            sorry, your order cannot be processed at this time
+            seems like you might be offline
           </div>`: null
     }
     connectedCallback() {
@@ -20,4 +20,4 @@ class OrderNotification extends HTMLElement {
         this.render()
     }
 }
-customElements.define('order-notification', OrderNotification)
+customElements.define('network-error', NetworkError)

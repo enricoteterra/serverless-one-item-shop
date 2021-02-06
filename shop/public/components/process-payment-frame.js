@@ -1,4 +1,4 @@
-class NetworkErrorMessage extends HTMLElement {
+class ProcessPaymentFrame extends HTMLElement {
     static observedAttributes = ['visible']
     get visible() { 
         return this.hasAttribute('visible') 
@@ -9,9 +9,9 @@ class NetworkErrorMessage extends HTMLElement {
     }
     render() {
         this.innerHTML = this.visible ?
-         `<div style="color: red; margin-top: 20px;">
-            seems like you might be offline
-          </div>`: null
+         `<section data-cy="process-payment-frame" class="process-payment-frame">
+            loading..
+          </section>`: null
     }
     connectedCallback() {
         this.render()
@@ -20,4 +20,4 @@ class NetworkErrorMessage extends HTMLElement {
         this.render()
     }
 }
-customElements.define('network-error-message', NetworkErrorMessage)
+customElements.define('process-payment-frame', ProcessPaymentFrame)

@@ -6,7 +6,7 @@ describe("Order Button", function() {
     it("dispatches `order-placed` event", async function() {
         expect.assertions(1)
         const button = document.createElement('order-button')
-        document.body.appendChild(document.createElement('order-button'))
+        document.body.appendChild(button)
         const element = document.querySelector('order-button button');
 
         document.addEventListener("order-placed", 

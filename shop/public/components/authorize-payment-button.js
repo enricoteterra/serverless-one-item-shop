@@ -1,6 +1,10 @@
 class AuthorizePaymentButton extends HTMLElement {
-    handleClick = (e) => {
-        this.dispatchEvent(new CustomEvent('payment-authorized', {bubbles: true, composed: true}))
+    constructor() {
+        super()
+        this.handleClick = (e) => {
+            e.preventDefault()
+            this.dispatchEvent(new CustomEvent('payment-authorized', {bubbles: true, composed: true}))
+        }
     }
     connectedCallback() {
         const button = document.createElement('button');

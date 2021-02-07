@@ -7,10 +7,11 @@ describe("Order Button", function() {
         expect.assertions(1)
         const button = document.createElement('order-button')
         document.body.appendChild(button)
-        const element = document.querySelector('order-button button');
 
+        const element = button.querySelector('order-button button');
         document.addEventListener("order-placed", 
             (event) => expect(event).toBeDefined())
+
         element.click()
     })
 })

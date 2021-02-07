@@ -1,6 +1,6 @@
 const style = document.createElement('style')
 style.textContent = `
-.frame {
+section {
     text-align: center;
     margin: 20px auto;
     padding: 20px;
@@ -23,7 +23,7 @@ class ProcessPaymentFrame extends HTMLElement {
     }
     render() {
         this.shadowRoot.innerHTML = this.visible ?
-         `<section data-cy="process-payment-frame" class="frame">
+         `<section data-cy="process-payment-frame">
             <p>Mock Payment Provider</p>
             <authorize-payment-button></authorize-payment-button>
           </section>`: null

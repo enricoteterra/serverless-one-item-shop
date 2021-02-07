@@ -6,11 +6,14 @@
   "main": "index.html",
   "scripts": {
     "dev": "lite-server --baseDir=public",
-    "test": "npx cypress run"
+    "test": "npm run unit-test && npm run browser-test",
+    "browser-test": "npx cypress run",
+    "unit-test": "npx jest --testPathIgnorePatterns=\\.spec"
   },
   "license": "ISC",
   "devDependencies": {
     "cypress": "^6.3.0",
+    "jest": "^26.6.3",
     "lite-server": "^2.6.1"
   }
 }

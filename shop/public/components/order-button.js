@@ -1,7 +1,10 @@
 class OrderButton extends HTMLElement {
-    handleClick = (e) => {
-        e.preventDefault()
-        this.dispatchEvent(new CustomEvent('order-placed', {bubbles: true}))
+    constructor() {
+        super()
+        this.handleClick = (e) => {
+            e.preventDefault()
+            this.dispatchEvent(new CustomEvent('order-placed', {bubbles: true}))
+        }
     }
     connectedCallback() {
         const button = document.createElement('button');

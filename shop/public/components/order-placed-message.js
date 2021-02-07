@@ -1,14 +1,16 @@
 const style = document.createElement('style')
 style.textContent = `
-.frame {
+.message {
     text-align: center;
     margin: 20px auto;
-    padding: 20px;
+    padding: 1px;
     width: 200px;
-    border: 1px solid #ccc;
+    background: green;
+    color: white;
+    font-weight: bold;
 }`
 
-class ProcessPaymentFrame extends HTMLElement {
+class OrderPlacedMessage extends HTMLElement {
     constructor() {
         super()
         this.attachShadow({mode: 'open'})
@@ -23,10 +25,9 @@ class ProcessPaymentFrame extends HTMLElement {
     }
     render() {
         this.shadowRoot.innerHTML = this.visible ?
-         `<section data-cy="process-payment-frame" class="frame">
-            <p>Mock Payment Provider</p>
-            <authorize-payment-button></authorize-payment-button>
-          </section>`: null
+         `<div data-cy="order-successful-message" class="message">
+            <p>Order successful!</p>
+          </div>`: null
         this.shadowRoot.appendChild(style)
     }
     connectedCallback() {
@@ -36,4 +37,4 @@ class ProcessPaymentFrame extends HTMLElement {
         this.render()
     }
 }
-customElements.define('process-payment-frame', ProcessPaymentFrame)
+customElements.define('order-placed-message', OrderPlacedMessage)
